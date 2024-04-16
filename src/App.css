@@ -1,0 +1,123 @@
+.navbar {
+  display: flex;
+  width: 80%;
+  padding: 20px 10%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+}
+.navbar .routes {
+  display: flex;
+  gap: 1rem;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  user-select: none;
+}
+a {
+  color: inherit;
+}
+.podpunkt {
+  font-weight: 300;
+  text-decoration: underline;
+}
+.resume-content > h1 {
+  margin-top: 0;
+}
+.resume-selfie {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  min-width: 500px;
+  width: min-content;
+  height: min-content;
+  overflow: hidden;
+}
+.resume-selfie > img {
+  min-width: 500px;
+  width: 50%;
+  height: 100%;
+}
+.resume-wrap {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+}
+.resume-content {
+  white-space: pre-wrap;
+}
+.main_layout {
+  position: relative;
+  font-family: "Press Start", monospace;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  width: calc(80% - 40px);
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+  margin: 0 10%;
+}
+.main_layout .watermark {
+  font-family: "Victor Mono", monospace;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+}
+.resume-preview-wrap {
+  width: fit-content;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+
+  gap: 1rem;
+  padding: 1rem;
+}
+.resume-preview-selfie {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+.resume-preview-selfie > img {
+  width: 100%;
+  height: 100%;
+}
+.resume-preview-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.resume-preview-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.summary-wrap {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  width: 300px;
+}
+.summary-wrap .summary-selfie {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+.summary-selfie > img {
+  width: 100%;
+  height: 100%;
+}
+.summaries-wrap {
+  padding: 1rem 0;
+  overflow-x: scroll;
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+}

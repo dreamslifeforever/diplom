@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  font-family: "Victor Mono", monospace;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
