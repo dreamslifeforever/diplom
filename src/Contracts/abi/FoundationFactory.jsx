@@ -1,7 +1,51 @@
 export const FoundationFactoryAddress =
-  "0x145BaE6c591bd0F6Ba847c4156FAC272Ba21eAC6";
+  "0xe82B9D0C30281449e7Df09C65c429e9eEE749d86";
 
 export default [
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "resume",
+        type: "address",
+      },
+    ],
+    name: "ResumeCreated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "vacancy",
+        type: "address",
+      },
+    ],
+    name: "VacancyCreated",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "_ownerSharesValue",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
   {
     inputs: [
       {
@@ -24,6 +68,19 @@ export default [
       },
     ],
     name: "changeResumeCreationPrice",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+    ],
+    name: "changeVacancyCreationPrice",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -67,34 +124,46 @@ export default [
     type: "function",
   },
   {
-    inputs: [],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    anonymous: false,
     inputs: [
       {
-        indexed: false,
-        internalType: "address",
-        name: "resume",
-        type: "address",
+        internalType: "string",
+        name: "photo",
+        type: "string",
       },
-    ],
-    name: "ResumeCreated",
-    type: "event",
-  },
-  {
-    inputs: [],
-    name: "_ownerSharesValue",
-    outputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        internalType: "string",
+        name: "description",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "companyName",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "telegramLink",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "payRangeCurrency",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "payRangeLower",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "payRangeHigher",
+        type: "string",
       },
     ],
-    stateMutability: "view",
+    name: "createVacancy",
+    outputs: [],
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -154,6 +223,49 @@ export default [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "limit",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "offset",
+        type: "uint256",
+      },
+    ],
+    name: "queryVacancies",
+    outputs: [
+      {
+        internalType: "contract Vacancy[]",
+        name: "",
+        type: "address[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "resumeOwner",
+        type: "address",
+      },
+    ],
+    name: "queryVacancyByAddress",
+    outputs: [
+      {
+        internalType: "contract Vacancy",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "resumeCreationPrice",
     outputs: [
@@ -169,6 +281,45 @@ export default [
   {
     inputs: [],
     name: "resumesLength",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "shares",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "vacanciesLength",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "vacancyCreationPrice",
     outputs: [
       {
         internalType: "uint256",

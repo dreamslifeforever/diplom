@@ -7,6 +7,8 @@ import MainLayout from "./MainLayout";
 import Dashboard from "./Dashboard";
 import Summary from "./Summary";
 import Summaries from "./Summaries";
+import Vacancy from "./Vacancy";
+import Vacancies from "./Vacancies";
 import { ResumeFormPopupProvider } from "./ResumeFormPopup";
 
 function App() {
@@ -18,12 +20,14 @@ function App() {
           <MainLayout>
             <Routes>
               <Route index element={<IndexComponent />}></Route>
-              <Route
-                path="/vacancies/:vacancyAddress"
-                element={<IndexComponent />}
-              ></Route>
+
               <Route path="/dashboard" element={<Dashboard />}></Route>
+              <Route path="/vacancies" element={<Vacancies />}></Route>
               <Route path="/summaries" element={<Summaries />}></Route>
+              <Route
+                path="/vacancies/:summaryAddress"
+                element={<Vacancy />}
+              ></Route>
               <Route
                 path="/summaries/:summaryAddress"
                 element={<Summary />}

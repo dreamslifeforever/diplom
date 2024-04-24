@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useReadContract } from "wagmi";
 import ResumeAbi from "./Contracts/abi/Resume";
-
+const toShortAddr = address => address.slice(0,7)+"..."+address.slice(address.length-7,address.length)
 function Summary() {
   const { summaryAddress } = useParams();
   const [resumeData, setResumeData] = useState({
@@ -67,22 +67,23 @@ function Summary() {
         <h3>
           Адрес резюме в блокчейне:{" "}
           <a href={`https://sepolia.etherscan.io/address/${summaryAddress}`}>
-            {summaryAddress}
+            {toShortAddr(summaryAddress)}
           </a>
         </h3>
 
         <h3>
-          Адрес создателя резюме в блокчейне:{" "}
+          Адрес создателя резюме в блокчейне: 
           <a href={`https://sepolia.etherscan.io/address/${resumeData.owner}`}>
-            {resumeData.owner}
+            {toShortAddr(resumeData.owner)}
           </a>
+         
         </h3>
         <h3>
           Статус в блокчейне: {resumeData.status ? "Активен" : "Не активен"}
         </h3>
         <hr />
 
-        <p>
+        <p className="scroll-x">
           <span className="podpunkt">
             <i>Текст резюме:</i>
           </span>{" "}
