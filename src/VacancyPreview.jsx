@@ -40,7 +40,15 @@ export default function VacancyPreview({ summaryAddress }) {
   }, [summary.data]);
   if (!summaryData.status) return null;
   return (
-    <Link to={`/vacancies/${summaryAddress}`}>
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      to={`/vacancies/${summaryAddress}`}
+    >
       <div className="summary-wrap">
         <div className="summary-selfie">
           <img src={summaryData.photo} alt="selfie" />

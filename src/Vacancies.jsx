@@ -24,6 +24,7 @@ function Controls({ incrementFunc, decrementFunc, currentIndex }) {
 function Vacancies() {
   const [pageIndex, setPageIndex] = useState(0);
   const [visibleSummaries, setVisibleSummaries] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const maxViewsPerPage = 6;
 
@@ -71,6 +72,14 @@ function Vacancies() {
   console.log(summaries.data);
   return (
     <>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Поиск резюме"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+      </div>
       <div className="summaries-wrap">{visibleSummaries}</div>
       <Controls
         currentIndex={pageIndex}

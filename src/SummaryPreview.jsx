@@ -37,7 +37,15 @@ export default function SummaryPreview({ summaryAddress }) {
   }, [summary.data]);
   if (!summaryData.status) return null;
   return (
-    <Link to={`/summaries/${summaryAddress}`}>
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      to={`/summaries/${summaryAddress}`}
+    >
       <div className="summary-wrap">
         <div className="summary-selfie">
           <img src={summaryData.selfieUrl} alt="selfie" />

@@ -9,6 +9,18 @@
   display: flex;
   gap: 1rem;
 }
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
 .button {
   display: flex;
   justify-content: center;
@@ -123,13 +135,11 @@ a {
   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows:auto;
-  
+  grid-template-rows: auto;
 }
-a{
-  
+a {
 }
-.page_controller{
+.page_controller {
   width: 100%;
   display: flex;
   gap: 5px;
@@ -137,14 +147,13 @@ a{
   align-items: center;
   margin: 1rem 0;
 }
-.page_controller > .controller_button{
+.page_controller > .controller_button {
   font-weight: 1000;
   cursor: pointer;
   padding: 5px;
   user-select: none;
-  
 }
-.scroll-x{
+.scroll-x {
   max-width: 100%;
   overflow-x: scroll;
 }
@@ -153,23 +162,21 @@ a{
   padding: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(0, 0, 0, 0.3);
-
 }
 .page_controller:active > .indexer {
   animation: blop 0.1s;
 }
 @keyframes blop {
-  0%{
+  0% {
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     border-top: 1px solid rgba(0, 0, 0, 0);
     scale: 1;
   }
-  50%{
+  50% {
     scale: 1.5;
   }
-  100%{
+  100% {
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     border-top: 1px solid rgba(0, 0, 0, 0);
   }
-
-} 
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useReadContract } from "wagmi";
+import { useReadContract, useAccount } from "wagmi";
 import VanancyABI from "./Contracts/abi/Vacancy";
 const toShortAddr = (address) =>
   address.slice(0, 7) +
@@ -8,6 +8,8 @@ const toShortAddr = (address) =>
   address.slice(address.length - 7, address.length);
 function Vacancy() {
   const { summaryAddress } = useParams();
+  const account = useAccount();
+
   const [resumeData, setResumeData] = useState({
     photo: "",
     description: "",
@@ -56,10 +58,46 @@ function Vacancy() {
           </span>{" "}
           <hr />
         </h1>
+
+        {account.address == resumeData.owner ? (
+          <div className="button">Редактировать</div>
+        ) : null}
       </div>
 
       <div className="resume-content">
-        <h1>Вакансия</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <h1>Резюме</h1>
+          <div
+            style={{
+              display: "flex",
+              gap: "3px",
+              marginRight: "15px",
+              border: "1px solid rgba(0, 0, 0, 0.3)",
+              backgroundColor: "rgba(0, 0, 0, 1)",
+              padding: "2px",
+            }}
+          >
+            <div
+              style={{ height: "50px", backgroundColor: "white" }}
+              className="button"
+            >
+              Откликнуться
+            </div>
+            <div
+              style={{ height: "50px", backgroundColor: "white" }}
+              className="button"
+            >
+              Пожаловаться
+            </div>
+          </div>
+        </div>
         <hr />
         <h3>
           Адрес вакансии в блокчейне:{" "}

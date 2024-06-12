@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useReadContract } from "wagmi";
 import ResumeAbi from "./Contracts/abi/Resume";
-const toShortAddr = address => address.slice(0,7)+"..."+address.slice(address.length-7,address.length)
+const toShortAddr = (address) =>
+  address.slice(0, 7) +
+  "..." +
+  address.slice(address.length - 7, address.length);
 function Summary() {
   const { summaryAddress } = useParams();
   const [resumeData, setResumeData] = useState({
@@ -62,7 +65,39 @@ function Summary() {
       </div>
 
       <div className="resume-content">
-        <h1>Резюме</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <h1>Резюме</h1>
+          <div
+            style={{
+              display: "flex",
+              gap: "3px",
+              marginRight: "15px",
+              border: "1px solid rgba(0, 0, 0, 0.3)",
+              backgroundColor: "rgba(0, 0, 0, 1)",
+              padding: "2px",
+            }}
+          >
+            <div
+              style={{ height: "50px", backgroundColor: "white" }}
+              className="button"
+            >
+              Откликнуться
+            </div>
+            <div
+              style={{ height: "50px", backgroundColor: "white" }}
+              className="button"
+            >
+              Пожаловаться
+            </div>
+          </div>
+        </div>
         <hr />
         <h3>
           Адрес резюме в блокчейне:{" "}
@@ -72,11 +107,10 @@ function Summary() {
         </h3>
 
         <h3>
-          Адрес создателя резюме в блокчейне: 
+          Адрес создателя резюме в блокчейне:
           <a href={`https://sepolia.etherscan.io/address/${resumeData.owner}`}>
             {toShortAddr(resumeData.owner)}
           </a>
-         
         </h3>
         <h3>
           Статус в блокчейне: {resumeData.status ? "Активен" : "Не активен"}
